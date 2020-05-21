@@ -12,7 +12,7 @@ export class CategoryController{
         this.app.route("/categories/languages").get(this.category_service.getAllWLanguage);
         this.app.route("/category/:id").delete(this.category_service.deleteOne);
         this.app.route("/category").post(this.category_service.NewOne);
-        this.app.route("/category/:id").get(this.category_service.getOneWLaguage);
+        this.app.route("/category/:id").get(this.category_service.getOneCatWLaguages);
         
     }
 }

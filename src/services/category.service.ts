@@ -4,7 +4,7 @@ import {Category, ICategory} from "../models/category.model";
 import {LanguageService} from "../services/language.service";
 
 import { MongooseDocument } from "mongoose";
-import { ILanguage } from "../models/language.model";
+
 
 
 class CategoryHelpers{
@@ -71,24 +71,9 @@ export class CategoryService extends CategoryHelpers{
             }
         })
     }
-    /*
-    public async getCategoryWLanguage(req: Request, res:Response){
-        /*
-        Category.findById(req.params.id).populate("language").exec((err:Error, producto:ILanguage)=>{
-            if(err){
-                res.status(401).json(err);
-            }else{
-                res.status(200).json(producto);
-            }
-        });
-        const cat:any = await super.GetCategory({_id:req.params.id});
-        res.status(200).json(cat[0]);
-    }*/
-
 
     
-    public async getOneWLaguage(req: Request, res:Response){
-        //const cat:any = await super.GetCategory({_id:req.params.id});
+    public async getOneCatWLaguages(req: Request, res:Response){
         const cat:any = await super.GetCategory({_id:req.params.id});
         let num: number;
         num = 0 ;
@@ -125,7 +110,6 @@ export class CategoryService extends CategoryHelpers{
                 
                 res.status(200).json(cat[num]);
                 console.log("Entre al bucle 2b")
-                //res.status(200).json(cat[0]);
             }
         })
     }
