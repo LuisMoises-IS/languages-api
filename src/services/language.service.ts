@@ -43,6 +43,37 @@ export class LanguageService extends LanguageHelpers{
           })
     }
 
+
+    /*
+    public async getWoneCat(req:Request, res:Response){
+        const category_service: CategoryService = new CategoryService();
+        const categories:any = await category_service.GetCategory({category: req.params.id});
+
+        Language.aggregate([
+            
+            {$match: {"category": categories.id}},
+            {    "$lookup":{
+                    from: "categories",
+                    localField:"category",
+                    foreignField:"_id",
+                    as: "category"
+                }
+            }
+            
+        ],(err:Error, data:any)=>{
+            console.log("Entre 1")
+            if(err){
+                res.status(401).send(err);
+            }else{
+                console.log("Entre 2")
+                res.status(200).json(data);
+            } 
+          })
+    }*/
+    
+
+
+
     public async NewOne(req: Request, res: Response){        
         const l = new Language(req.body);
         const old_lan:any = await super.GetLanguage({name:l.name});

@@ -13,6 +13,8 @@ export class LanguageController{
 
         this.app.route("/language").post(this.Language_service.NewOne);
 
+        //this.app.route("/categories/:id").get(this.Language_service.getWoneCat);
+
         this.app.route("/language/:id")
         .delete(this.Language_service.deleteOne)
         .get(this.Language_service.getOne)
